@@ -1,8 +1,8 @@
-# ?? GUÍA COMPLETA - RENDER.COM CON DOCKER
+# ?? GUï¿½A COMPLETA - RENDER.COM CON DOCKER
 
-## ? CONFIGURACIÓN CORRECTA
+## ? CONFIGURACIï¿½N CORRECTA
 
-Render **SÍ soporta .NET PERO SOLO con Docker**.
+Render **Sï¿½ soporta .NET PERO SOLO con Docker**.
 
 Tu proyecto **YA TIENE** todos los Dockerfiles configurados ?
 
@@ -17,7 +17,7 @@ Usuario:  db31651
 Password: prueba2020d
 ```
 
-? Ya está en `Shared.Data/DatabaseConfig.cs`
+? Ya estï¿½ en `Shared.Data/DatabaseConfig.cs`
 
 ---
 
@@ -31,7 +31,7 @@ cd "D:\Jossue\Desktop\RETO 3\BACK\V1\Microservicios"
 # Crea repositorio en GitHub: https://github.com/new
 # Nombre: hotel-microservices
 
-.\init-github.ps1 -RepoUrl "https://github.com/TU_USUARIO/hotel-microservices.git"
+.\init-github.ps1 -RepoUrl "https://github.com/PierreMV04/HotelCampestre-Microservicios.git"
 ```
 
 ---
@@ -42,7 +42,7 @@ cd "D:\Jossue\Desktop\RETO 3\BACK\V1\Microservicios"
 2. **"Get Started"**
 3. **"Sign up with GitHub"**
 4. Autoriza Render
-5. ? NO pide tarjeta de crédito
+5. ? NO pide tarjeta de crï¿½dito
 
 ---
 
@@ -60,7 +60,7 @@ Vamos a crear un servicio por cada microservicio.
    Name:                apigateway
    Region:              Oregon (US West)
    Branch:              main
-   Root Directory:      (dejar vacío - usa raíz del repo)
+   Root Directory:      (dejar vacï¿½o - usa raï¿½z del repo)
    Runtime:             Docker
    Dockerfile Path:     ApiGateway/Dockerfile
 
@@ -88,7 +88,7 @@ Vamos a crear un servicio por cada microservicio.
    Name:                catalogos-service
    Region:              Oregon (US West)
    Branch:              main
-   Root Directory:      (vacío)
+   Root Directory:      (vacï¿½o)
    Runtime:             Docker
    Dockerfile Path:     CatalogosService/Dockerfile
 
@@ -116,7 +116,7 @@ Vamos a crear un servicio por cada microservicio.
    Name:                habitaciones-service
    Region:              Oregon (US West)
    Branch:              main
-   Root Directory:      (vacío)
+   Root Directory:      (vacï¿½o)
    Runtime:             Docker
    Dockerfile Path:     HabitacionesService/Dockerfile
 
@@ -144,7 +144,7 @@ Vamos a crear un servicio por cada microservicio.
    Name:                reservas-service
    Region:              Oregon (US West)
    Branch:              main
-   Root Directory:      (vacío)
+   Root Directory:      (vacï¿½o)
    Runtime:             Docker
    Dockerfile Path:     ReservasService/Dockerfile
 
@@ -172,7 +172,7 @@ Vamos a crear un servicio por cada microservicio.
    Name:                usuarios-pagos-service
    Region:              Oregon (US West)
    Branch:              main
-   Root Directory:      (vacío)
+   Root Directory:      (vacï¿½o)
    Runtime:             Docker
    Dockerfile Path:     UsuariosPagosService/Dockerfile
 
@@ -184,7 +184,7 @@ Vamos a crear un servicio por cada microservicio.
    ASPNETCORE_URLS = http://0.0.0.0:$PORT
    JWT_SECRET_KEY = HotelMicroservicesSecretKey2024!@#$%^&*()_+
    RABBITMQ_URL = 
-   RESERVAS_SERVICE_URL = (dejar vacío por ahora)
+   RESERVAS_SERVICE_URL = (dejar vacï¿½o por ahora)
 
 6. "Create Web Service"
 ```
@@ -217,7 +217,7 @@ UsuariosPagosService: https://usuarios-pagos-service.onrender.com
    RESERVAS_SERVICE_URL = https://reservas-service.onrender.com
 
 4. "Save Changes"
-5. Render redesplegará automáticamente (2-3 min)
+5. Render redesplegarï¿½ automï¿½ticamente (2-3 min)
 ```
 
 ---
@@ -251,16 +251,16 @@ UsuariosPagosService: https://usuarios-pagos-service.onrender.com
    
    GET /api/catalogos/ciudades
 
-3. ? Debería retornar tus ciudades de SQL Server
+3. ? Deberï¿½a retornar tus ciudades de SQL Server
 ```
 
 ---
 
-## ?? SOLUCIÓN AL "DORMIDO" (Cold Starts)
+## ?? SOLUCIï¿½N AL "DORMIDO" (Cold Starts)
 
-Los servicios gratis duermen después de 15 min de inactividad.
+Los servicios gratis duermen despuï¿½s de 15 min de inactividad.
 
-### **Solución: UptimeRobot** (Gratis)
+### **Soluciï¿½n: UptimeRobot** (Gratis)
 
 ```
 1. Ve a: https://uptimerobot.com
@@ -273,7 +273,7 @@ Los servicios gratis duermen después de 15 min de inactividad.
    Monitoring Interval: 5 minutes
 
 5. Repetir para los 5 servicios
-6. ? Tus servicios se mantendrán activos 24/7
+6. ? Tus servicios se mantendrï¿½n activos 24/7
 ```
 
 ---
@@ -304,26 +304,26 @@ Los servicios gratis duermen después de 15 min de inactividad.
 
 ## ?? LIMITACIONES DEL PLAN FREE
 
-| Limitación | Detalle | Solución |
+| Limitaciï¿½n | Detalle | Soluciï¿½n |
 |------------|---------|----------|
-| **Cold starts** | 30-60 seg después de 15 min | UptimeRobot |
+| **Cold starts** | 30-60 seg despuï¿½s de 15 min | UptimeRobot |
 | **512 MB RAM** | Por servicio | Suficiente para tu proyecto |
 | **CPU Shared** | Compartido | Normal en plan Free |
 | **Build time** | 10 min max | Tus Dockerfiles compilan en ~5 min |
 
 ---
 
-## ?? REDEPLOY AUTOMÁTICO
+## ?? REDEPLOY AUTOMï¿½TICO
 
 Cada vez que hagas `git push`:
 
 ```powershell
 git add .
-git commit -m "Actualización"
+git commit -m "Actualizaciï¿½n"
 git push
 ```
 
-Render detectará el cambio y **redesplegará automáticamente** los servicios.
+Render detectarï¿½ el cambio y **redesplegarï¿½ automï¿½ticamente** los servicios.
 
 ---
 
@@ -338,7 +338,7 @@ API Gateway (Render - Docker)
       ?
 ??????????????????????????????????
 ?     ?     ?         ?          ?
-Catálogos Habitac. Reservas Usuarios/Pagos
+Catï¿½logos Habitac. Reservas Usuarios/Pagos
 (Render)  (Render)  (Render)  (Render)
  Docker    Docker    Docker    Docker
 ?     ?     ?         ?          ?
@@ -360,29 +360,29 @@ Catálogos Habitac. Reservas Usuarios/Pagos
 3. Errores comunes:
    - Dockerfile path incorrecto
    - Problemas en dotnet restore
-   - Falta algún proyecto compartido
+   - Falta algï¿½n proyecto compartido
 ```
 
 ### "Application failed to start"
 
 ```
 1. Verifica Environment Variables
-2. Asegúrate de tener: ASPNETCORE_URLS=http://0.0.0.0:$PORT
-3. Revisa logs para ver error específico
+2. Asegï¿½rate de tener: ASPNETCORE_URLS=http://0.0.0.0:$PORT
+3. Revisa logs para ver error especï¿½fico
 ```
 
 ### "Cannot connect to SQL Server"
 
 ```
-1. Verifica que Somee.com esté activo
-2. Prueba conexión desde SSMS local
+1. Verifica que Somee.com estï¿½ activo
+2. Prueba conexiï¿½n desde SSMS local
 3. Revisa que DatabaseConfig.cs tenga la connection string correcta
 ```
 
 ### "Service is slow / unavailable"
 
 ```
-1. Es cold start (normal después de 15 min)
+1. Es cold start (normal despuï¿½s de 15 min)
 2. Espera 30-60 segundos
 3. Configura UptimeRobot para mantener activo
 ```
@@ -419,7 +419,7 @@ ngOnInit() {
 
 ---
 
-## ? VENTAJAS DE ESTA CONFIGURACIÓN
+## ? VENTAJAS DE ESTA CONFIGURACIï¿½N
 
 1. ? **Gratis 100%** ($0 USD/mes)
 2. ? **Docker** (profesional y portable)
@@ -427,16 +427,16 @@ ngOnInit() {
 4. ? **5 microservicios** funcionando
 5. ? **Auto-deploy** desde GitHub
 6. ? **SSL/HTTPS** gratis
-7. ? **Sin tarjeta** de crédito
+7. ? **Sin tarjeta** de crï¿½dito
 
 ---
 
 ## ?? CHECKLIST
 
-- [ ] Código subido a GitHub
+- [ ] Cï¿½digo subido a GitHub
 - [ ] Cuenta creada en Render
 - [ ] 5 servicios creados con Docker
-- [ ] URLs públicas generadas
+- [ ] URLs pï¿½blicas generadas
 - [ ] Variables de entorno configuradas
 - [ ] ApiGateway con URLs actualizadas
 - [ ] Swagger funcionando
@@ -445,7 +445,7 @@ ngOnInit() {
 
 ---
 
-## ?? DOCUMENTACIÓN ÚTIL
+## ?? DOCUMENTACIï¿½N ï¿½TIL
 
 - **Render Docs:** https://render.com/docs
 - **Render Docker:** https://render.com/docs/docker
@@ -454,10 +454,10 @@ ngOnInit() {
 
 ---
 
-## ?? PRÓXIMO PASO
+## ?? PRï¿½XIMO PASO
 
 ```powershell
-# Si no has subido el código:
+# Si no has subido el cï¿½digo:
 .\init-github.ps1 -RepoUrl "https://github.com/TU_USUARIO/hotel-microservices.git"
 
 # Luego ve a:
@@ -468,12 +468,12 @@ start https://render.com
 
 <div align="center">
 
-# ? **¡RENDER + DOCKER CONFIGURADO!** ?
+# ? **ï¿½RENDER + DOCKER CONFIGURADO!** ?
 
-**Tu única opción GRATIS con .NET en Render**
+**Tu ï¿½nica opciï¿½n GRATIS con .NET en Render**
 
-**50 minutos • $0 USD/mes • Sin tarjeta**
+**50 minutos ï¿½ $0 USD/mes ï¿½ Sin tarjeta**
 
-**Con Docker para máxima compatibilidad**
+**Con Docker para mï¿½xima compatibilidad**
 
 </div>
